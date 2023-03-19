@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/', 'App\Http\Controllers\HomeController@show');
+
+//Route::resource('file', 'App\Http\Controllers\FileController');
+
+//Route::view('/file', 'fileUpload');
+
+Route::view('/form/fill', 'document');
+
+Route::get('/form/submit', 'App\Http\Controllers\MyController@generateDocument');
+
