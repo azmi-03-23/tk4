@@ -1,26 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\resources\\js",
-    "\\resources\\js\\components",
-    "\\resources\\views",
-    "\\resources\\views\\layouts",
-    "\\tests",
-    "\\tests\\Feature"
-  ],
-  "SelectedNode": "\\tests\\Feature\\DatabaseTest.php",
-=======
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
     "\\resources",
-    "\\resources\\views",
-    "\\resources\\views\\layout"
+    "\\resources\\js\\components",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\homepage.blade.php",
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
+  "SelectedNode": "\\resources\\views",
   "PreviewInSolutionExplorer": false
 }

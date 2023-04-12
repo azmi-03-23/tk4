@@ -17,14 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-Route::get('/users', 'ApiController@getUsers');
-Route::post('/users', 'ApiController@createUser');
-Route::put('/users/{id}', 'ApiController@updateUser');
-Route::delete('/users/{id}', 'ApiController@deleteUser');
-
-Route::get('/constrtonum/{val?}', function($val=1000){
-    return var_dump($val);
-})->middleware('constrtonum:val');
-

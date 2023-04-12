@@ -18,19 +18,11 @@ Route::get('/', function () {
 });
 
 
-//Route::any('/{any}', [AngularController::class, 'index'])->where('any', '^(?!api).*$');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', 'App\Http\Controllers\HomeController@show');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');
 
-//Route::resource('file', 'App\Http\Controllers\FileController');
 
-//Route::view('/file', 'fileUpload');
-
-Route::view('/form/fill', 'document');
-
-Route::get('/form/submit', 'App\Http\Controllers\MyController@generateDocument');
 
 
