@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 function Example() {
@@ -27,4 +27,4 @@ if (document.getElementById('example')) {
             <Example/>
         </React.StrictMode>
     )
-}
+}*/

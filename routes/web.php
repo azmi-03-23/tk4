@@ -17,4 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/{any}', [AngularController::class, 'index'])->where('any', '^(?!api).*$');
+
+//Route::any('/{any}', [AngularController::class, 'index'])->where('any', '^(?!api).*$');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

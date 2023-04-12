@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User as User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -15,8 +16,8 @@ class DatabaseTest extends TestCase
      */
     public function test_database()
     {
-        $this->assertDatabaseHas('users', [
-            'email' => 'email@example.com',
-        ]);
+        $users = User::factory()->count(10)->create();
+
+        $this->assertDatabaseCount('users', 10);
     }
 }
