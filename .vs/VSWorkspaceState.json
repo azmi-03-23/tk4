@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
@@ -12,5 +13,14 @@
     "\\tests\\Feature"
   ],
   "SelectedNode": "\\tests\\Feature\\DatabaseTest.php",
+=======
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\layout"
+  ],
+  "SelectedNode": "\\resources\\views\\homepage.blade.php",
+>>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
   "PreviewInSolutionExplorer": false
 }
