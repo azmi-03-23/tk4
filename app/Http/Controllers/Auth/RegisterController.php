@@ -52,8 +52,18 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'password' => [
+                'required',
+                'string',
+                'min:10',
+                'confirmed',
+                'regex:/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%^&*\(\)\-_\+=])([a-zA-Z0-9!@#\$%^&*\(\)\-_\+=]+){10,}/'
+                ],
+            ],
+            $message = [
+            'regex' => 'Your password need to have at least one number, uppercase letter, lowercase letter, and symbol (!@#$%^&*()_-+=)'
+            ],
+        );
     }
 
     /**

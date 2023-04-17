@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\resources",
-    "\\resources\\js\\components",
-    "\\routes"
+    "\\resources\\views",
+    "\\resources\\views\\auth",
+    "\\tests\\Feature"
   ],
-  "SelectedNode": "\\resources\\views",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
