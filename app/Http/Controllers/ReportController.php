@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ReportController extends Controller
 {
@@ -17,8 +19,8 @@ class ReportController extends Controller
     {
         $items_sold = DB::table('sales')
                 ->join('items', 'items.id', '=', 'sales.id_barang')
-                ->groupBy('items.id_barang')
-                ->orderBy('items.id_barang', 'asc')
+                ->groupBy('items.id')
+                ->orderBy('items.id', 'asc')
                 ->select('items.nama as nama_barang', 'sales.qty')
                 ->get();
         return view('menu/report.view', ['items' => $items_sold]);

@@ -1,9 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Http\\Controllers",
+    "\\app\\Models",
+    "\\database",
+    "\\database\\factories",
+    "\\database\\migrations",
     "\\database\\seeders",
-    "\\resources\\views\\layouts"
+    "\\resources\\views",
+    "\\resources\\views\\menu",
+    "\\resources\\views\\menu\\item"
   ],
-  "SelectedNode": "\\composer.lock",
+  "SelectedNode": "\\database\\factories\\SalesFactory.php",
   "PreviewInSolutionExplorer": false
 }

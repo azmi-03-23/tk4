@@ -7,27 +7,26 @@ use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class SalesController extends Controller
 {
     function index()
     {
-        //get sales
-
+        //get sales according to user's level(role)
         $user = Auth::user();
         if ($user->level == 'pembeli') {
             $sales = DB::table('sales')
                 ->join('items', 'items.id', '=', 'sales.id_barang')
-                ->select('sales.*', 'items.nama as nama_barang')->whereIn('id_user', array($user->id))
+                ->select('sales.*', 'items.nama as nama_barang', 'items.harga_jual as harga')
+                ->whereIn('id_user', array($user->id))
                 ->get();
-            // $sales = Sales::latest()->whereIn('id_user', array($user->id))->paginate(5);
-            // dd($sales);
         } else {
             $sales = DB::table('sales')
                 ->join('items', 'items.id', '=', 'sales.id_barang')
                 ->select('sales.*', 'items.nama as nama_barang', 'items.stok')
+                ->where('status', false)
                 ->get();
-            // $sales = Sales::latest()->paginate(5);
         }
 
         //render view with sales
@@ -47,31 +46,39 @@ class SalesController extends Controller
     public function store(Request $request)
     {
         //validate form
-        $this->validate($request, [
-            // 'id_user' => 'required',
-            // 'nama_user' => 'required',
-            // 'id_barang' => 'required',
-            // 'nama_barang' => 'required',
+        $validator = Validator::make($request->all(),[
+            'id_barang' => 'required',
             'qty' => 'required',
-            'harga_jual' => 'required',
             'total' => 'required'
         ]);
+        //retrieve user
         $user = Auth::user();
-        // $item = Item::all()->whereIn('id', array($request->id_barang));
-
-        // dd($request->id_barang);
-
-        //create item
-        Sales::create([
-            'id_user'     => $user->id,
-            'nama_user'     => $user->nama,
-            'id_barang'     => $request->id_barang,
-            // 'nama_barang'     => $item->nama,
-            'qty'   => floatval(str_replace(",", "", $request->qty)),
-            'harga_jual'   => floatval(str_replace(",", "", $request->harga_jual)),
-            'total'   => floatval(str_replace(",", "", $request->total))
-            // 'password'   => Hash::make($request->password)
+        //retrieve validated input
+        $validated = $validator->safe()->only([
+            'id_barang',
+            'qty',
+            'total'
         ]);
+
+        
+        // get harga_jual from items table
+        $harga = DB::table('items')
+                ->select('harga_jual')
+                ->where('id_barang', $request->id_barang)
+                ->get();
+        //calculate total`
+        $total = $harga * $request->qty;
+
+        //create order
+        Sales::create([
+            'id_user' => $user->id,
+            'id_barang' => $request->id_barang,
+            'qty'   => floatval(str_replace(",", "", $request->qty)),
+            'harga_jual'   => floatval(str_replace(",", "", $harga)),
+            'total'   => floatval(str_replace(",", "", $total))
+        ]);
+
+        //staff should validate the sales (order)
 
         //redirect to index
         return redirect()->route('sales.index')->with(['success' => 'Data Berhasil Disimpan!']);
