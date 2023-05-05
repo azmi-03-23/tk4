@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/report', \App\Http\Controllers\ReportController::class);
 Route::resource('/staff', \App\Http\Controllers\StaffController::class)->middleware('isLogin');
 Route::resource('/buyer', \App\Http\Controllers\BuyerController::class)->middleware('isLogin');
 Route::resource('/item', \App\Http\Controllers\ItemController::class)->middleware('isLogin');

@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\app\\Http\\Controllers\\Auth",
-    "\\app\\Models"
+    "\\database\\seeders",
+    "\\resources\\views\\layouts"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\Auth\\RegisterController.php",
+  "SelectedNode": "\\composer.lock",
   "PreviewInSolutionExplorer": false
 }
