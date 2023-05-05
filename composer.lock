@@ -1118,11 +1118,6 @@
             "time": "2021-10-07T12:57:01+00:00"
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
             "name": "laminas/laminas-escaper",
             "version": "2.12.0",
             "source": {
@@ -1185,10 +1180,6 @@
             "time": "2022-10-10T10:11:09+00:00"
         },
         {
-<<<<<<< HEAD
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
-=======
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
             "name": "laravel/framework",
             "version": "v9.52.4",
             "source": {
@@ -1655,25 +1646,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d44a24690f16b8c1808bf13b1bd54ae4c63ea048",
                 "reference": "d44a24690f16b8c1808bf13b1bd54ae4c63ea048",
-=======
-=======
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
-            "name": "league/commonmark",
-            "version": "2.3.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "c1e114f74e518daca2729ea8c4bf1167038fa4b5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c1e114f74e518daca2729ea8c4bf1167038fa4b5",
-                "reference": "c1e114f74e518daca2729ea8c4bf1167038fa4b5",
-<<<<<<< HEAD
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
-=======
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
-                "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
@@ -1708,15 +1680,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "dev-main": "2.5-dev"
-=======
-                    "dev-main": "2.4-dev"
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
-=======
-                    "dev-main": "2.4-dev"
->>>>>>> 15da15a69b0edec2e05860d1ed1beed18892a42b
                 }
             },
             "autoload": {

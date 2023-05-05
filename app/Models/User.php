@@ -19,9 +19,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'nama',
+        'jenisKelamin',
+        'user',
         'password',
+        'retypePassword',
     ];
 
     /**
@@ -43,11 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    private function post($user){
+    /*private function post($user){
         DB::table('users')->insert([
             'name' => $user['name'],
             'email' => $user['email'],
             'password' => $user['password']
         ]);
-    }
+    }*/
 }
