@@ -23,7 +23,7 @@ class ItemFactory extends Factory
             'gambar' => $this->faker->image(),
             'stok'=> $this->faker->numberBetween(0,100),
             'harga_beli' => $this->faker->randomDigit(),
-            'harga_jual'=> $this->faker->numberBetween($this->harga_beli,($this->harga_beli+12))
+            'harga_jual'=> $this->faker->randomDigit()
         ];
     }
 }

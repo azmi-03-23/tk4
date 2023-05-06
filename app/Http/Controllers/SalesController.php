@@ -18,7 +18,7 @@ class SalesController extends Controller
         if ($user->level == 'pembeli') {
             $sales = DB::table('sales')
                 ->join('items', 'items.id', '=', 'sales.id_barang')
-                ->select('sales.*', 'items.nama as nama_barang', 'items.harga_jual as harga')
+                ->select('sales.*', 'items.nama as nama_barang')
                 ->whereIn('id_user', array($user->id))
                 ->get();
         } else {
@@ -48,16 +48,14 @@ class SalesController extends Controller
         //validate form
         $validator = Validator::make($request->all(),[
             'id_barang' => 'required',
-            'qty' => 'required',
-            'total' => 'required'
+            'qty' => 'required'
         ]);
         //retrieve user
         $user = Auth::user();
         //retrieve validated input
         $validated = $validator->safe()->only([
             'id_barang',
-            'qty',
-            'total'
+            'qty'
         ]);
 
         

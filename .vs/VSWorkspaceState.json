@@ -2,16 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http\\Controllers",
-    "\\app\\Models",
-    "\\database",
     "\\database\\factories",
-    "\\database\\migrations",
-    "\\database\\seeders",
-    "\\resources\\views",
     "\\resources\\views\\menu",
-    "\\resources\\views\\menu\\item"
+    "\\resources\\views\\menu\\report",
+    "\\tests\\Feature"
   ],
-  "SelectedNode": "\\database\\factories\\SalesFactory.php",
+  "SelectedNode": "\\app\\View",
   "PreviewInSolutionExplorer": false
 }

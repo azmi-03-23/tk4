@@ -1,34 +1,30 @@
-<h1>Jumlah Penjualan Barang</h1>
-<canvas id="myChart"></canvas>
+<h4>Jumlah Penjualan Barang</h4>
+<!--<canvas id="myChart"></canvas>-->
+<h1 id="labels"></h1>
+<h1 id="datas"></h1>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js">
-    const ctx = document.getElementById('myChart');
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('myChart').getContext('2d');
     
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: [
-                @foreach ($items as $item)
-                    {{ $item['nama_barang'] }},
-                @endforeach
-            ],
-            datasets: [{
+    var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: {{ $labels }},
+        datasets: [{
             label: 'Jumlah Penjualan',
-            data: [
-                @foreach ($items as $item)
-                    {{ $item['qty'] }},
-                @endforeach
-            ],
+            data: {{ $datas }},
             borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
+        }]
+    },
+    options: {
+        scales: {
             y: {
                 beginAtZero: true
             }
-            }
         }
-    });
-
+    }
+    });*/
 </script>
+

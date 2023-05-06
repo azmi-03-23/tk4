@@ -18,12 +18,11 @@ class SalesFactory extends Factory
     {
         return [
             'id_user' => $this->faker->numberBetween(1,10),
-            'nama_user'  => $this->faker->name(),
-            'id_barang',
-            'nama_barang',
-            'qty',
-            'harga_jual',
-            'total'
+            'id_barang' => $this->faker->numberBetween(1,10),
+            'qty' => $this->faker->numberBetween(1,10),
+            'harga_jual' => $this->faker->randomDigit(),
+            'total' => $this->faker->randomDigit(),
+            'status' => true
         ];
     }
 }

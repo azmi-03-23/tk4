@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
-            $table->string('nama_user');
             $table->integer('id_barang');
             $table->integer('qty');
             $table->integer('harga_jual');
             $table->integer('total');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

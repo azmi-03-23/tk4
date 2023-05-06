@@ -11,11 +11,10 @@ class Sales extends Model
 
     protected $fillable = [
         'id_user',
-        'nama_user',
         'id_barang',
-        'nama_barang',
         'qty',
         'harga_jual',
-        'total'
+        'total',
+        'status'
     ];
 }

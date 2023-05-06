@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Sales;
 
 class TesterName extends TestCase
 {
@@ -13,10 +14,12 @@ class TesterName extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_generate_report_data()
     {
-        $response = $this->get('/');
+        $sales = Sales::factory()->count(10)->create();
+    }
 
-        $response->assertStatus(200);
+    public function test_has_n_table(){
+        $this->assertDatabaseCount('sales', 10);
     }
 }
