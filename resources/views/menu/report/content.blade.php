@@ -1,5 +1,5 @@
 <h4>Jumlah Penjualan Barang</h4>
-<!--<canvas id="myChart"></canvas>-->
+<canvas id="myChart"></canvas>
 <h1 id="labels"></h1>
 <h1 id="datas"></h1>
 
@@ -11,7 +11,11 @@
     var chart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: {{ $labels }},
+        labels:[
+        @for($i = 0; $i < count($labels); $i++)
+            '{{ $labels[$i] }}',
+        @endfor
+        ],
         datasets: [{
             label: 'Jumlah Penjualan',
             data: {{ $datas }},
@@ -25,6 +29,6 @@
             }
         }
     }
-    });*/
+    });
 </script>
 

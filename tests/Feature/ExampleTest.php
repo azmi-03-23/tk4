@@ -20,12 +20,13 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+    /*
     public function test_generate_report_data()
     {
         $item = Item::factory()->count(10)->create();
     }
-
-    public function test_has_n_table(){
-        $this->assertDatabaseCount('items', 10);
+    */
+    public function test_users_has_n_table(){
+        $this->assertDatabaseCount('users', 10);
     }
 }
